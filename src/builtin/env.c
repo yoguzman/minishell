@@ -6,7 +6,7 @@
 /*   By: yguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/27 16:24:13 by yguzman           #+#    #+#             */
-/*   Updated: 2017/09/28 15:34:40 by yguzman          ###   ########.fr       */
+/*   Updated: 2017/10/17 12:01:17 by yguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int			put_equal(t_list **tmp, char **tab, int *i)
 	{
 		if (equal(tab[*i]) == 1)
 		{
-			if (list_push_back(tmp, tab[*i], sizeof(tmp)) == -1)
+			if (list_push_back(tmp, ft_strdup(tab[*i]), sizeof(tmp)) == -1)
 				return (-1);
 		}
 		else
@@ -84,11 +84,11 @@ char		*reforme_cmd(char **tab, int i)
 	while (tab[i + 1])
 	{
 		buff = cmd;
-		if ((cmd = ft_strjoin(cmd, " ")) == NULL)
+		if ((cmd = ft_strjoin(buff, " ")) == NULL)
 			return (NULL);
 		free(buff);
 		buff = cmd;
-		if ((cmd = ft_strjoin(cmd, tab[i + 1])) == NULL)
+		if ((cmd = ft_strjoin(buff, tab[i + 1])) == NULL)
 			return (NULL);
 		free(buff);
 		++i;

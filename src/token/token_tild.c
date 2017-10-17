@@ -6,7 +6,7 @@
 /*   By: yguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/27 16:37:44 by yguzman           #+#    #+#             */
-/*   Updated: 2017/10/03 17:51:39 by yguzman          ###   ########.fr       */
+/*   Updated: 2017/10/09 13:23:35 by yguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int			replace_tild(char **line, int *i, t_list *my_env)
 
 	home = ft_strdup(ft_getenv("HOME=", my_env));
 	if (home == NULL || home[0] == 0)
-		return (2);
+		return (free_home(home));
 	if ((buff = before_tild(line, i, home)) == NULL)
 		return (-1);
 	if ((int)(ft_strlen(*line) - 1) > *i)

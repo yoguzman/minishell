@@ -6,7 +6,7 @@
 /*   By: yguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/27 16:21:44 by yguzman           #+#    #+#             */
-/*   Updated: 2017/09/28 13:54:14 by yguzman          ###   ########.fr       */
+/*   Updated: 2017/10/09 13:24:34 by yguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,6 @@ int				find_path(char **path, t_list *my_env, t_dl *dl);
 int				check_blank_line(char *line);
 void			catch_segfault();
 int				replace_tild(char **line, int *i, t_list *my_env);
+int				free_home(char *home);
 
 #endif
